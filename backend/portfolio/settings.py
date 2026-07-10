@@ -143,7 +143,7 @@ if AWS_STORAGE_BUCKET_NAME:
             "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
             "OPTIONS": {
                 "location": "media",
-                "default_acl": "public-read",
+                "default_acl": None,
                 "querystring_auth": False,
             },
         },
@@ -151,7 +151,7 @@ if AWS_STORAGE_BUCKET_NAME:
             "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
             "OPTIONS": {
                 "location": "static",
-                "default_acl": "public-read",
+                "default_acl": None,
                 "querystring_auth": False,
             },
         },
