@@ -798,6 +798,8 @@ export default function HomePage() {
     }
     fetchAll();
 
+    // Polling interval removed to prevent Gunicorn backend worker saturation on Render free tier.
+    // Data is loaded once on initial mount and synced across tabs using BroadcastChannel.
     let channel;
     try {
       channel = new BroadcastChannel('portfolio_sync');
