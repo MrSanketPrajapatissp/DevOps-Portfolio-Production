@@ -13,8 +13,7 @@
 
 ## 🏗️ System Architecture
 
-<!-- Architecture diagram will be added here -->
-<!-- ![System Architecture](./docs/screenshots/architecture_diagram.gif) -->
+![System Architecture — AWS ECS Fargate with CI/CD Pipeline](./docs/screenshots/AWS_Architecture_Diagram_animated_2K_202607111534.jpeg)
 
 ---
 
