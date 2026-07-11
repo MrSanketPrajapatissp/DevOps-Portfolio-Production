@@ -798,8 +798,6 @@ export default function HomePage() {
     }
     fetchAll();
 
-    const interval = setInterval(fetchAll, 10000);
-
     let channel;
     try {
       channel = new BroadcastChannel('portfolio_sync');
@@ -813,7 +811,6 @@ export default function HomePage() {
     }
 
     return () => {
-      clearInterval(interval);
       if (channel) {
         channel.close();
       }
