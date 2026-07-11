@@ -37,11 +37,11 @@ phases:
       # Primary artifact imagedefinitions.json (at the root) for backend
       - echo "[{\"name\":\"portfolio-backend\",\"imageUri\":\"$REPO_BE:$IMAGE_TAG\"}]" > imagedefinitions.json
       
-      # Prepare deployment artifacts directory for backend (secondary-artifact)
+      # Prepare deployment artifacts directory for backend
       - mkdir -p backend-deploy
       - cp imagedefinitions.json backend-deploy/imagedefinitions.json
       
-      # Prepare deployment artifacts directory for frontend (secondary-artifact)
+      # Prepare deployment artifacts directory for frontend
       - mkdir -p frontend-deploy
       - echo "[{\"name\":\"portfolio-frontend\",\"imageUri\":\"$REPO_FE:$IMAGE_TAG\"}]" > frontend-deploy/imagedefinitions.json
       
@@ -50,12 +50,5 @@ phases:
 artifacts:
   files:
     - imagedefinitions.json
-  secondary-artifacts:
-    BackendArtifact:
-      files:
-        - imagedefinitions.json
-      base-directory: backend-deploy
-    FrontendArtifact:
-      files:
-        - imagedefinitions.json
-      base-directory: frontend-deploy
+    - frontend-deploy/imagedefinitions.json
+    - backend-deploy/imagedefinitions.json
