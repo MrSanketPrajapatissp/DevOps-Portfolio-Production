@@ -2502,3 +2502,61 @@ pre code {
 .mobile-overlay.visible {
   display: block;
 }
+
+/* ----------------------------------------------------------
+   Premium Panel & Glow Animations (Adaptive Dark/Light)
+   ---------------------------------------------------------- */
+.premium-panel {
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(17, 29, 51, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+[data-theme="light"] .premium-panel {
+  background: rgba(241, 245, 249, 0.85);
+  border-color: rgba(2, 132, 199, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.premium-panel .terminal-header {
+  border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+  background: rgba(30, 58, 95, 0.12);
+}
+
+[data-theme="light"] .premium-panel .terminal-header {
+  border-bottom: 1px solid rgba(2, 132, 199, 0.15);
+  background: rgba(2, 132, 199, 0.05);
+}
+
+@keyframes border-glow-pulse {
+  0%, 100% {
+    border-color: rgba(0, 212, 255, 0.15);
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.02);
+  }
+  50% {
+    border-color: rgba(0, 212, 255, 0.35);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+}
+
+@keyframes border-glow-pulse-light {
+  0%, 100% {
+    border-color: rgba(2, 132, 199, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  }
+  50% {
+    border-color: rgba(2, 132, 199, 0.4);
+    box-shadow: 0 6px 24px rgba(2, 132, 199, 0.06);
+  }
+}
+
+.premium-panel.pulse-glow {
+  animation: border-glow-pulse 4s infinite ease-in-out;
+}
+
+[data-theme="light"] .premium-panel.pulse-glow {
+  animation: border-glow-pulse-light 4s infinite ease-in-out;
+}

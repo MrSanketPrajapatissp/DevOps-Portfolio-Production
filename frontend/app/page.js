@@ -22,6 +22,51 @@ function getStatusColor(s) {
   return { available: '#10b981', open: '#f59e0b', unavailable: '#ef4444', deployed: '#10b981', in_progress: '#f59e0b', archived: '#64748b', obtained: '#10b981', expired: '#ef4444' }[s] || '#94a3b8';
 }
 
+function highlightText(text) {
+  if (!text) return '';
+  const keywords = [
+    { phrase: '4x AWS Certified', color: 'var(--accent-green)', bold: true },
+    { phrase: '3-tier AWS architectures', color: 'var(--accent-cyan)', bold: true },
+    { phrase: 'containerization (Docker, Kubernetes)', color: 'var(--accent-cyan)', bold: false },
+    { phrase: 'Infrastructure as Code (Terraform)', color: 'var(--accent-cyan)', bold: false },
+    { phrase: 'GitOps', color: 'var(--accent-green)', bold: true },
+    { phrase: 'Django/React', color: 'var(--accent-cyan)', bold: true },
+    { phrase: 'Docker, Kubernetes', color: 'var(--accent-cyan)', bold: true },
+    { phrase: 'Terraform', color: 'var(--accent-cyan)', bold: true },
+  ];
+  
+  const sortedKeywords = [...keywords].sort((a, b) => b.phrase.length - a.phrase.length);
+  
+  let parts = [text];
+  sortedKeywords.forEach(({ phrase, color, bold }) => {
+    const nextParts = [];
+    parts.forEach(part => {
+      if (typeof part !== 'string') {
+        nextParts.push(part);
+        return;
+      }
+      const index = part.toLowerCase().indexOf(phrase.toLowerCase());
+      if (index !== -1) {
+        const start = part.substring(0, index);
+        const match = part.substring(index, index + phrase.length);
+        const end = part.substring(index + phrase.length);
+        
+        if (start) nextParts.push(start);
+        nextParts.push(
+          <span key={match + Math.random()} style={{ color, fontWeight: bold ? 'bold' : 'normal', textShadow: color === 'var(--accent-cyan)' ? '0 0 8px rgba(0, 212, 255, 0.2)' : 'none' }}>
+            {match}
+          </span>
+        );
+        if (end) nextParts.push(end);
+      } else {
+        nextParts.push(part);
+      }
+    });
+    parts = nextParts;
+  });
+  return parts;
+}
+
 // ─── TERMINAL BOOT ─────────────────────────────────────────
 const BOOT_LINES = [
   '> INITIALIZING CONTROL PLANE...',
@@ -266,9 +311,15 @@ function HeroSection({ hero, summary }) {
         {bootDone && (
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }}
             style={{ display: 'flex', gap: 12, marginTop: 16 }}>
-            <a href="#resume" className="deployment-detail-link" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', color: 'var(--accent-cyan)', borderColor: 'rgba(0, 212, 255, 0.3)', textShadow: 'none' }}>
+            <motion.a 
+              href="#resume" 
+              className="deployment-detail-link" 
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', color: 'var(--accent-cyan)', borderColor: 'rgba(0, 212, 255, 0.3)', textShadow: 'none' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(0, 212, 255, 0.4)', borderColor: 'var(--accent-cyan)' }}
+              whileTap={{ scale: 0.95 }}
+            >
               <FileText size={12} /> VIEW_RESUME_CV.sh
-            </a>
+            </motion.a>
           </motion.div>
         )}
       </div>
@@ -281,7 +332,24 @@ function HeroSection({ hero, summary }) {
         <ScrollReveal delay={0.2}>
           <div style={{ gridColumn: 'span 2', marginTop: '32px' }} className="summary-panel">
             <h3 className="section-label">professional summary</h3>
-            <p className="summary-text summary-box" style={{ fontSize: '15px', lineHeight: '1.7', padding: '20px', borderRadius: '8px' }}>{summary.content}</p>
+            <motion.div 
+              className="summary-box premium-panel pulse-glow" 
+              whileHover={{ 
+                borderColor: 'var(--border-active)',
+                boxShadow: 'var(--glow-cyan)'
+              }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="terminal-header" style={{ padding: '10px 16px', display: 'flex', gap: '6px', alignItems: 'center' }}>
+                <span className="terminal-dot red" style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444' }} />
+                <span className="terminal-dot amber" style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f59e0b' }} />
+                <span className="terminal-dot green" style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }} />
+                <span className="terminal-title" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', color: 'var(--text-muted)', marginLeft: '6px' }}>profile_summary.log</span>
+              </div>
+              <p className="summary-text" style={{ fontSize: '15.5px', lineHeight: '1.8', padding: '24px', margin: 0, color: 'var(--text-primary)', fontFamily: "'JetBrains Mono', monospace", whiteSpace: 'normal', wordBreak: 'break-word' }}>
+                {highlightText(summary.content)}
+              </p>
+            </motion.div>
           </div>
         </ScrollReveal>
       )}
@@ -299,21 +367,46 @@ function SkillsSection({ categories }) {
           &gt; NO SKILLS CATEGORIES RECORDED IN DATABASE.
         </div>
       ) : (
-        <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '24px' }}>
+        <div className="skills-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '32px' }}>
           {categories.map((cat, ci) => {
             const Icon = categoryIcons[cat.icon] || Code;
             return (
               <ScrollReveal key={cat.id} delay={ci * 0.08}>
-                <div className="skill-category-group">
-                  <h3 className="skill-category-label"><Icon size={16} /> {cat.name}</h3>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '12px' }}>
-                    {cat.skills?.map((skill) => (
-                      <span key={skill.id} className="badge cyan" style={{ padding: '6px 12px', fontSize: '13px', fontFamily: "'JetBrains Mono', monospace", textTransform: 'none' }}>
-                        {skill.name}
-                      </span>
-                    ))}
+                <motion.div 
+                  className="skill-category-group summary-box premium-panel pulse-glow" 
+                  style={{ 
+                    height: '100%',
+                    animationDelay: `${ci * 0.2}s`
+                  }}
+                  whileHover={{ 
+                    y: -6,
+                    borderColor: 'var(--border-active)',
+                    boxShadow: 'var(--glow-cyan)'
+                  }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  <div className="terminal-header" style={{ padding: '10px 16px', display: 'flex', gap: '6px', alignItems: 'center' }}>
+                    <span className="terminal-dot red" style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ef4444' }} />
+                    <span className="terminal-dot amber" style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f59e0b' }} />
+                    <span className="terminal-dot green" style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981' }} />
+                    <span className="terminal-title" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10.5px', color: 'var(--text-muted)', marginLeft: '6px' }}>
+                      {cat.name.toLowerCase().replace(/[^a-z0-9]/g, '_')}.conf
+                    </span>
                   </div>
-                </div>
+                  <div style={{ padding: '18px' }}>
+                    <h3 className="skill-category-label" style={{ marginBottom: '14px', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent-cyan)' }}>
+                      <Icon size={14} /> {cat.name.toUpperCase()}
+                    </h3>
+                    <div className="skill-category-skills" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      {cat.skills?.map((skill) => (
+                        <div key={skill.id} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', fontFamily: "'JetBrains Mono', monospace", color: 'var(--text-primary)', lineHeight: '1.4' }}>
+                          <span style={{ color: 'var(--accent-cyan)', flexShrink: 0 }}>▹</span>
+                          <span style={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
               </ScrollReveal>
             );
           })}
@@ -342,7 +435,12 @@ function ProjectsSection({ projects }) {
           {projects.map((p, i) => (
             <ScrollReveal key={p.id} delay={i * 0.06}>
               <div style={{ borderBottom: i < projects.length - 1 ? '1px solid rgba(30, 58, 95, 0.3)' : 'none' }}>
-                <div className={`deployment-entry ${expanded === p.id ? 'expanded' : ''}`} onClick={() => setExpanded(expanded === p.id ? null : p.id)}>
+                <motion.div 
+                  className={`deployment-entry ${expanded === p.id ? 'expanded' : ''}`} 
+                  onClick={() => setExpanded(expanded === p.id ? null : p.id)}
+                  whileHover={{ x: 6, background: 'rgba(0, 212, 255, 0.04)', borderColor: 'rgba(0, 212, 255, 0.25)' }}
+                  transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+                >
                   <span className="deployment-timestamp">[{new Date(p.created_at).toISOString().slice(0, 10)}]</span>
                   <span className="deployment-action">DEPLOY</span>
                   <span className="deployment-name">{p.slug}</span>
@@ -354,7 +452,7 @@ function ProjectsSection({ projects }) {
                   <span style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
                     {expanded === p.id ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                   </span>
-                </div>
+                </motion.div>
                 <AnimatePresence>
                   {expanded === p.id && (
                     <motion.div className="deployment-detail" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
@@ -408,7 +506,11 @@ function CertificationsSection({ certifications }) {
           </div>
           {certifications.map((cert, i) => (
             <ScrollReveal key={cert.id} delay={i * 0.06}>
-              <div className="credential-row">
+              <motion.div 
+                className="credential-row"
+                whileHover={{ x: 6, background: 'rgba(0, 212, 255, 0.04)', borderColor: 'rgba(0, 212, 255, 0.25)' }}
+                transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+              >
                 <span className="credential-name">
                   {cert.credential_url ? (
                     <a href={cert.credential_url} target="_blank" rel="noopener noreferrer">
@@ -427,7 +529,7 @@ function CertificationsSection({ certifications }) {
                     {cert.status?.replace('_', ' ').toUpperCase()}
                   </span>
                 </span>
-              </div>
+              </motion.div>
             </ScrollReveal>
           ))}
         </div>
@@ -451,8 +553,13 @@ function ExperienceSection({ experience }) {
           <div className="pipeline-stages">
             {experience.map((exp, i) => (
               <div key={exp.id} className="pipeline-stage-wrapper">
-                <div className={`pipeline-stage ${active === i ? 'selected' : ''} ${exp.is_current ? 'current' : ''}`}
-                  onClick={() => setActive(i)}>
+                <motion.div 
+                  className={`pipeline-stage ${active === i ? 'selected' : ''} ${exp.is_current ? 'current' : ''}`}
+                  onClick={() => setActive(i)}
+                  whileHover={{ scale: 1.025, y: -2 }}
+                  whileTap={{ scale: 0.985 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                >
                   <div className="pipeline-stage-header">
                     <span className="pipeline-stage-role">{exp.role}</span>
                     {exp.is_current ? (
@@ -465,7 +572,7 @@ function ExperienceSection({ experience }) {
                   <div className="pipeline-stage-date">
                     {new Date(exp.start_date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} - {exp.is_current ? 'PRESENT' : new Date(exp.end_date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
                   </div>
-                </div>
+                </motion.div>
                 {i < experience.length - 1 && (
                   <div className="pipeline-connector">
                     <ArrowRight size={16} />
@@ -524,7 +631,17 @@ function ShowcasesSection({ showcases }) {
         <div className="showcases-grid">
           {showcases.map((sc, i) => (
             <ScrollReveal key={sc.id} delay={i * 0.1}>
-              <a href={`/showcases/${sc.slug}`} className="showcase-panel">
+              <motion.a 
+                href={`/showcases/${sc.slug}`} 
+                className="showcase-panel"
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.025,
+                  boxShadow: '0 12px 30px rgba(0, 212, 255, 0.25)',
+                  borderColor: 'rgba(0, 212, 255, 0.4)' 
+                }}
+                transition={{ type: 'spring', stiffness: 250, damping: 18 }}
+              >
                 <div className="showcase-bg" style={{ backgroundImage: `url(${sc.diagram_image ? (sc.diagram_image.startsWith('http') ? sc.diagram_image : `${API}${sc.diagram_image}`) : ''})` }} />
                 <div className="showcase-overlay" />
                 <div className="showcase-content">
@@ -534,7 +651,7 @@ function ShowcasesSection({ showcases }) {
                     {sc.technologies?.slice(0, 5).map(t => <span key={t} className="badge cyan">{t}</span>)}
                   </div>
                 </div>
-              </a>
+              </motion.a>
             </ScrollReveal>
           ))}
         </div>
@@ -624,9 +741,17 @@ function ContactSection() {
             <label className="contact-label" style={{ minWidth: '90px' }}>message<span className="term-sep">:</span></label>
             <textarea className="contact-textarea" value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} required placeholder="transmission payload..." rows={4} />
           </div>
-          <button type="submit" className="contact-submit" disabled={loading} style={{ marginTop: '20px' }}>
+          <motion.button 
+            type="submit" 
+            className="contact-submit" 
+            disabled={loading} 
+            style={{ marginTop: '20px' }}
+            whileHover={{ scale: 1.02, boxShadow: '0 0 15px rgba(16, 185, 129, 0.4)', background: 'rgba(16, 185, 129, 0.08)' }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+          >
             {loading ? '> TRANSMITTING...' : '> EXECUTE'} <Send size={14} style={{ display: 'inline', marginLeft: 6 }} />
-          </button>
+          </motion.button>
           {status === 'success' && <p className="contact-response success" style={{ marginTop: '16px' }}>✓ Message transmitted successfully.</p>}
           {status === 'error' && <p className="contact-response error" style={{ marginTop: '16px' }}>✗ Transmission failed. Try again.</p>}
         </form>
