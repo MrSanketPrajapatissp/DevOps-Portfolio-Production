@@ -1,0 +1,24 @@
+name: Production Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-backend:
+    name: Deploy Backend to Render
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Deployment
+        env:
+          DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$DEPLOY_HOOK" ]; then
+            echo "RENDER_DEPLOY_HOOK secret is not set. Skipping manual trigger."
+            echo "Note: If you have Render's 'Auto-Deploy' enabled (default), Render is already deploying your changes automatically."
+          else
+            echo "Triggering Render deployment..."
+            curl -f "$DEPLOY_HOOK"
+            echo "Render deployment triggered successfully!"
+          fi
