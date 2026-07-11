@@ -1,0 +1,729 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$SX0DRrvc5mEm6jJpKwEcIF$7PvmuxZIYTgSvLu58qHO4r0EGTHzu+mVZrb2kEA+hbQ=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@controlplane.dev",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-07-06T09:51:02.051Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$600000$94brrIK2OB2KlpRbbE49Mc$SZ9pS7h3YmbFkzewGdc1bfbfIZPw2QiHYBZTlz1Eqo0=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "prajapatisanketssp321@gmail.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "prajapatisanketssp321@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-07-06T10:27:24.057Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "core.heroidentity",
+    "pk": 3,
+    "fields": {
+        "name": "Sanket Prajapati",
+        "title": "DevOps & Cloud Infrastructure Engineer",
+        "tagline": "4x AWS Certified | Automating High-Availability 3-Tier Architectures & GitOps Pipelines",
+        "availability_status": "available",
+        "avatar": "avatars/IMG_20230928_114821_4_mGp0tYD.jpg",
+        "location": "Remote / India",
+        "years_experience": 2
+    }
+},
+{
+    "model": "core.professionalsummary",
+    "pk": 3,
+    "fields": {
+        "content": "4x AWS Certified DevOps and Cloud Infrastructure Engineer with a proven track record of designing, securing, and automating production-grade 3-tier AWS architectures. Specialized in containerization (Docker, Kubernetes), Infrastructure as Code (Terraform), and high-availability setups that eliminate single points of failure. Passionate about GitOps and continuous delivery—bridging Django/React full-stack development with enterprise-grade cloud automation, secrets management, and robust monitoring stacks.",
+        "updated_at": "2026-07-11T11:27:05.069Z"
+    }
+},
+{
+    "model": "core.sociallink",
+    "pk": 10,
+    "fields": {
+        "platform": "github",
+        "url": "https://github.com/MrSanketPrajapatissp",
+        "icon_class": "github",
+        "order": 1
+    }
+},
+{
+    "model": "core.sociallink",
+    "pk": 11,
+    "fields": {
+        "platform": "linkedin",
+        "url": "https://linkedin.com/in/sanket-prajapati",
+        "icon_class": "linkedin",
+        "order": 2
+    }
+},
+{
+    "model": "core.sociallink",
+    "pk": 12,
+    "fields": {
+        "platform": "twitter",
+        "url": "https://x.com/SanketP33817397",
+        "icon_class": "twitter",
+        "order": 3
+    }
+},
+{
+    "model": "core.sociallink",
+    "pk": 13,
+    "fields": {
+        "platform": "email",
+        "url": "mailto:prajapatisanketssp321@gmail.com",
+        "icon_class": "mail",
+        "order": 4
+    }
+},
+{
+    "model": "core.sociallink",
+    "pk": 14,
+    "fields": {
+        "platform": "phone",
+        "url": "tel:+918421927904",
+        "icon_class": "phone",
+        "order": 5
+    }
+},
+{
+    "model": "core.resume",
+    "pk": 3,
+    "fields": {
+        "file": "resumes/Sanket_Prajapati_DevOps_Resume.pdf",
+        "uploaded_at": "2026-07-11T11:27:05.750Z",
+        "is_active": true
+    }
+},
+{
+    "model": "skills.skillcategory",
+    "pk": 23,
+    "fields": {
+        "name": "Cloud: AWS",
+        "icon": "cloud",
+        "order": 1
+    }
+},
+{
+    "model": "skills.skillcategory",
+    "pk": 24,
+    "fields": {
+        "name": "Infrastructure as Code & GitOps",
+        "icon": "code",
+        "order": 2
+    }
+},
+{
+    "model": "skills.skillcategory",
+    "pk": 25,
+    "fields": {
+        "name": "Containers & Orchestration",
+        "icon": "box",
+        "order": 3
+    }
+},
+{
+    "model": "skills.skillcategory",
+    "pk": 26,
+    "fields": {
+        "name": "Full-Stack Development",
+        "icon": "terminal",
+        "order": 4
+    }
+},
+{
+    "model": "skills.skillcategory",
+    "pk": 27,
+    "fields": {
+        "name": "Databases & Observability",
+        "icon": "activity",
+        "order": 5
+    }
+},
+{
+    "model": "skills.skillcategory",
+    "pk": 28,
+    "fields": {
+        "name": "Collaboration & Professional Tools",
+        "icon": "shield",
+        "order": 6
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 67,
+    "fields": {
+        "category": 23,
+        "name": "AWS Core (VPC, EC2, S3, IAM, Route 53)",
+        "proficiency": 95,
+        "icon_url": "",
+        "order": 1
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 68,
+    "fields": {
+        "category": 23,
+        "name": "AWS Serverless & Compute (Lambda, ECS Fargate)",
+        "proficiency": 92,
+        "icon_url": "",
+        "order": 2
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 69,
+    "fields": {
+        "category": 23,
+        "name": "Database Scaling (RDS Multi-AZ, Aurora Serverless)",
+        "proficiency": 90,
+        "icon_url": "",
+        "order": 3
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 70,
+    "fields": {
+        "category": 23,
+        "name": "Cloud Cost Optimization & FinOps",
+        "proficiency": 85,
+        "icon_url": "",
+        "order": 4
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 71,
+    "fields": {
+        "category": 24,
+        "name": "Terraform (IaC Automation)",
+        "proficiency": 94,
+        "icon_url": "",
+        "order": 1
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 72,
+    "fields": {
+        "category": 24,
+        "name": "GitHub Actions (CI/CD GitOps)",
+        "proficiency": 92,
+        "icon_url": "",
+        "order": 2
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 73,
+    "fields": {
+        "category": 24,
+        "name": "AWS Systems Manager & SSM Run Command",
+        "proficiency": 90,
+        "icon_url": "",
+        "order": 3
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 74,
+    "fields": {
+        "category": 24,
+        "name": "AWS CodePipeline & CodeBuild",
+        "proficiency": 88,
+        "icon_url": "",
+        "order": 4
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 75,
+    "fields": {
+        "category": 24,
+        "name": "Ansible (Configuration Management)",
+        "proficiency": 85,
+        "icon_url": "",
+        "order": 5
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 76,
+    "fields": {
+        "category": 25,
+        "name": "Docker (Multi-stage builds, Optimization)",
+        "proficiency": 93,
+        "icon_url": "",
+        "order": 1
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 77,
+    "fields": {
+        "category": 25,
+        "name": "Kubernetes (EKS, Deployment Patterns)",
+        "proficiency": 88,
+        "icon_url": "",
+        "order": 2
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 78,
+    "fields": {
+        "category": 26,
+        "name": "Python (Django REST Framework)",
+        "proficiency": 90,
+        "icon_url": "",
+        "order": 1
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 79,
+    "fields": {
+        "category": 26,
+        "name": "JavaScript (React, Vite, Next.js)",
+        "proficiency": 86,
+        "icon_url": "",
+        "order": 2
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 80,
+    "fields": {
+        "category": 26,
+        "name": "WSGI Servers (Gunicorn, Nginx Reverse Proxy)",
+        "proficiency": 88,
+        "icon_url": "",
+        "order": 3
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 81,
+    "fields": {
+        "category": 26,
+        "name": "Shell Scripting (Bash Automation)",
+        "proficiency": 90,
+        "icon_url": "",
+        "order": 4
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 82,
+    "fields": {
+        "category": 26,
+        "name": "Java / OOP Design Patterns",
+        "proficiency": 80,
+        "icon_url": "",
+        "order": 5
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 83,
+    "fields": {
+        "category": 27,
+        "name": "PostgreSQL (RDS Tuning, Schemas)",
+        "proficiency": 90,
+        "icon_url": "",
+        "order": 1
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 84,
+    "fields": {
+        "category": 27,
+        "name": "MySQL / SQLite",
+        "proficiency": 85,
+        "icon_url": "",
+        "order": 2
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 85,
+    "fields": {
+        "category": 27,
+        "name": "Prometheus & Grafana (System Monitoring)",
+        "proficiency": 86,
+        "icon_url": "",
+        "order": 3
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 86,
+    "fields": {
+        "category": 27,
+        "name": "SonarQube (Static Application Security)",
+        "proficiency": 82,
+        "icon_url": "",
+        "order": 4
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 87,
+    "fields": {
+        "category": 28,
+        "name": "Git & GitHub Advanced Workflows",
+        "proficiency": 95,
+        "icon_url": "",
+        "order": 1
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 88,
+    "fields": {
+        "category": 28,
+        "name": "Agile Project Management (Trello, Slack)",
+        "proficiency": 90,
+        "icon_url": "",
+        "order": 2
+    }
+},
+{
+    "model": "skills.skill",
+    "pk": 89,
+    "fields": {
+        "category": 28,
+        "name": "Enterprise AI Tools (Claude, GLM-5.2)",
+        "proficiency": 92,
+        "icon_url": "",
+        "order": 3
+    }
+},
+{
+    "model": "projects.project",
+    "pk": 23,
+    "fields": {
+        "title": "FoodBridge — Production-Grade 3-Tier AWS Architecture & Platform",
+        "slug": "foodbridge-production-grade-3-tier-aws-architecture-platform",
+        "description": "> **A High-Availability, Secure, and Automated Food Waste Reduction Platform Connecting Donors with Verified NGOs.**",
+        "tech_stack": [
+            "VPC Dashboard",
+            "VPC Resource Map",
+            "Subnet Allocations",
+            "NAT Gateway",
+            "Elastic IP",
+            "Security Groups",
+            "Security Group Rules",
+            "RDS PostgreSQL",
+            "Initial Instances",
+            "Autoscaled Instances"
+        ],
+        "github_url": "https://github.com/MrSanketPrajapatissp/FoodBridge",
+        "live_url": "https://foodbridge.sanketdevs.online",
+        "readme_content": "# FoodBridge — Production-Grade 3-Tier AWS Architecture & Platform\n\n> **A High-Availability, Secure, and Automated Food Waste Reduction Platform Connecting Donors with Verified NGOs.**\n> \n> **Production Live URL**: [https://foodbridge.sanketdevs.online](https://foodbridge.sanketdevs.online)\n> \n> **Stack**: Django 5 (REST API Backend) + React 18 & Vite (Nginx Frontend) + Amazon RDS PostgreSQL (Database) + AWS ECR (Container Registry) + GitHub Actions (CI/CD)\n\n---\n\n## 🏗️ Production Architecture Overview\n\nThis project is deployed using a production-ready **3-Tier AWS Architecture** to ensure security, scalability, high availability, and zero single-points-of-failure. \n\n### 🖼️ System Architecture Diagram\n*(Below is the conceptual architecture diagram of the deployment)*\n\n![AWS 3-Tier Architecture Diagram](AWS_cloud_architecture_diagram_.jpeg)\n\n### Key Architectural Pillars\n\n*   **Multi-AZ High Availability**: Deployed across two Availability Zones (`ap-south-1a` and `ap-south-1b`) in the Mumbai region.\n*   **Isolated Subnet Security**: \n    *   **Public Web Tier**: Hosts the Internet-facing Application Load Balancer (ALB) and Nginx/React Web servers.\n    *   **Private Application Tier**: Django REST API servers run in private subnets, shielded from direct internet access.\n    *   **Private Database Tier**: Amazon RDS PostgreSQL instance runs in isolated database subnets, accessible only from the App Tier.\n*   **Outbound Internet Gateway Protection**: Private App EC2 instances communicate with the outer internet (e.g., ECR login, SMTP mailers) through a **NAT Gateway** in the public subnet.\n*   **Auto Scaling Groups (ASG)**: Both the Web (Nginx) and App (Django) tiers are managed by independent Auto Scaling Groups, configured to scale between 1 and 2 instances based on demand.\n*   **Dual Load Balancing**: \n    *   **External ALB**: Terminates public SSL/TLS (HTTPS) traffic on port 443 via an AWS Certificate Manager (ACM) SSL certificate and forwards it to the Web Tier.\n    *   **Internal ALB**: Acts as a private proxy, forwarding API requests securely from Nginx to Gunicorn/Django on port 8000.\n\n---\n\n## 🛠️ Infrastructure Configuration (VPC Spec)\n\n| Component | Resource Name | Details |\n|-----------|---------------|---------|\n| **Region** | `ap-south-1` | Asia Pacific (Mumbai) |\n| **VPC** | `foodbridge-vpc-vpc` | CIDR: `192.168.0.0/16` |\n| **Public Subnets** | `foodbridge-public-a`, `foodbridge-public-b` | `192.168.0.0/24`, `192.168.16.0/24` (Hosts Web ALB & Frontend) |\n| **Private App Subnets** | `foodbridge-app-a`, `foodbridge-app-b` | `192.168.128.0/24`, `192.168.176.0/24` (Hosts Django API Backend) |\n| **Private DB Subnets** | `foodbridge-db-a`, `foodbridge-db-b` | `192.168.160.0/24`, `192.168.144.0/24` (Hosts RDS PostgreSQL) |\n| **NAT Gateway** | `foodbridge-vpc-nat...` | Associated with Elastic IP, deployed in `ap-south-1a` |\n| **RDS Instance** | `foodbridge-db` | Engine: `PostgreSQL 16`, Instance: `db.t4g.micro` |\n\n---\n\n## 🚀 CI/CD GitOps Pipeline & Automation\n\nThe application uses an automated **GitHub Actions** deployment pipeline that executes on every push to the `main` branch:\n\n1.  **Build & Containerize**: Compiles Docker images for both frontend (`frontend/Dockerfile`) and backend (`backend/Dockerfile`).\n2.  **ECR Registry Push**: Authenticates with AWS and pushes compiled images to private **Amazon Elastic Container Registry (ECR)** repositories tagged with the specific git commit SHA and `latest`.\n3.  **SSM Auto-Deploy**: Triggers deployment commands securely using the **AWS Systems Manager (SSM) Agent** on the target EC2 instances. It pulls the latest ECR images, stops old containers, loads environment configurations from the SSM Parameter Store, and launches the updated containers dynamically without exposing SSH keys to GitHub.\n\n---\n\n## 📸 AWS Infrastructure Evidence (Proofs)\n\nBelow are the snapshots from the AWS Console proving the complete setup and successful deployment of the platform.\n\n### 🌐 VPC & Networking\n| Resource | Screenshot | Description |\n|---|---|---|\n| **VPC Dashboard** | ![VPC Dashboard](SS/01_vpc_dashboard.png) | VPC resources allocated in the ap-south-1 region. |\n| **VPC Resource Map** | ![VPC Resource Map](SS/02_vpc_resource_map.png) | Map showing route tables, Internet Gateway, and NAT Gateway routing paths. |\n| **Subnet Allocations** | ![Subnet Allocations](SS/03_vpc_subnets_list.png) | 6 subnets mapped across ap-south-1a and ap-south-1b. |\n| **NAT Gateway** | ![NAT Gateway](SS/04_nat_gateway.png) | Public NAT Gateway configured with Elastic IP for private subnets outbound traffic. |\n| **Elastic IP List** | ![Elastic IP](SS/05_elastic_ip_addresses.png) | Static IPs allocated for NAT Gateway and Load Balancer endpoints. |\n\n### 🔒 Security & Database\n| Resource | Screenshot | Description |\n|---|---|---|\n| **Security Groups** | ![Security Groups](SS/06_security_groups_list.png) | Least-privilege ingress configurations (Web-SG, App-SG, AppALB-SG, WebALB-SG, Database-SG). |\n| **Inbound Rules Spec** | ![Security Group Rules](SS/07_vpc_security_groups_inbound_rules.png) | Detailed list showing port 8000 and database port 5432 security bounds. |\n| **Amazon RDS Summary** | ![RDS PostgreSQL](SS/08_rds_database_summary.png) | Active PostgreSQL database running in the private db subnet. |\n\n### ⚙️ Compute, Scaling & Load Balancing\n| Resource | Screenshot | Description |\n|---|---|---|\n| **Initial EC2 Instances** | ![Initial Instances](SS/09_ec2_instances_running_initial.png) | Initial running instances of App Server and Web Server. |\n| **Autoscaled Instances** | ![Autoscaled Instances](SS/10_ec2_instances_running_autoscaled.png) | Multiple instances running simultaneously under Auto Scaling Group management. |\n| **Load Balancers** | ![Load Balancers](SS/11_load_balancers_list.png) | Active Internal (App) and External (Web) Application Load Balancers. |\n| **Target Groups Overview** | ![Target Groups](SS/12_target_groups_list.png) | Mapped Target Groups directing traffic to port 8000 (Backend) and port 80 (Frontend). |\n| **Web Target Group Health** | ![Web Target Health](SS/13_web_target_group_state.png) | Active targets serving React frontend behind the external load balancer. |\n| **App Target Group Health** | ![App Target Health](SS/14_app_target_group_healthy_state.png) | Django backend servers showing `Healthy` status on port 8000. |\n| **Auto Scaling Dashboard** | ![Auto Scaling](SS/15_auto_scaling_groups_dashboard.png) | ASG policies maintaining high availability of both tiers. |\n\n### 🧬 DevOps Automation & Configuration\n| Resource | Screenshot | Description |\n|---|---|---|\n| **SSM Parameter Store** | ![SSM Parameter Store](SS/16_ssm_parameter_store.png) | Environment variables, database URL, credentials, and settings stored securely. |\n| **ACM SSL Certificate** | ![ACM Certificate](SS/17_acm_ssl_certificate_details.png) | AWS Certificate Manager issued certificate for `foodbridge.sanketdevs.online` validation. |\n| **GitHub Repository** | ![GitHub Repo](SS/18_github_repository_main.png) | Master repository code, Actions workflow, and project scripts. |\n| **CI/CD Workflow Runs** | ![GitHub Actions Pipeline](SS/19_github_actions_workflow_runs.png) | Successful Git-triggered builds pushing images to ECR and deploying via SSM. |\n\n### 🌐 Live Platform Screenshots\n| Screen | Screenshot | Description |\n|---|---|---|\n| **NGO Web Dashboard** | ![NGO Dashboard](SS/20_live_app_ngo_dashboard.png) | Authenticated dashboard showing available food claims, SSL verified (Padlock active). |\n| **Admin Control Dashboard** | ![Admin Dashboard](SS/21_live_app_admin_dashboard.png) | Admin dashboard monitoring organization verifications and transaction email logs. |\n\n---\n\n## 🛠️ Local Development Setup Guide\n\nFor testing, debugging, or running the application locally on your machine, follow the steps below.\n\n### Local Setup Prerequisites\n*   Python 3.11.x\n*   Node.js v18+ (Node 20 or 24 recommended)\n*   SQLite (default local database)\n\n### Terminal 1 — Django Backend\n```powershell\ncd backend\npython -m venv venv\n.\\venv\\Scripts\\Activate.ps1\npip install -r requirements.txt\npython manage.py migrate\npython manage.py collectstatic --noinput\npython manage.py runserver\n```\n*Backend runs locally at: **http://localhost:8000***\n\n### Terminal 2 — React Frontend\n```powershell\ncd frontend\nnpm install\nnpm run dev\n```\n*Frontend runs locally at: **http://localhost:5173***\n\n---\n\n## 🔑 Pre-Configured Test Credentials\n\nUse these pre-seeded accounts to explore the platform features locally or in production:\n\n| Role | Email / Username | Password | Access Level |\n|---|---|---|---|\n| **Admin** | `foodbridge.admin.connect@gmail.com` | `pass@123` | Django Admin & Organization Verifications |\n| **Donor** | `prajapatisanketssp321@gmail.com` | `pass@123` | Creating food donations & verifying OTPs |\n| **NGO** | `sanketprajapatipdp@gmail.com` | `pass@123` | Claiming donations (NGO: *Sanket Welfare*) |\n\n---\n\n*FoodBridge — Reducing food waste, one meal at a time. 🌿*\n",
+        "image": "projects/AWS_cloud_architecture_diagram__p0qCwx4.jpeg",
+        "is_github_synced": true,
+        "github_repo_name": "MrSanketPrajapatissp/FoodBridge",
+        "last_synced": "2026-07-11T12:07:51.996Z",
+        "status": "deployed",
+        "order": 1,
+        "created_at": "2026-07-11T11:27:09.074Z",
+        "updated_at": "2026-07-11T12:07:51.996Z"
+    }
+},
+{
+    "model": "projects.project",
+    "pk": 24,
+    "fields": {
+        "title": "Control Plane — Next-Gen AWS DevOps Portfolio Platform",
+        "slug": "control-plane-next-gen-aws-devops-portfolio-platform",
+        "description": "> An enterprise-grade, high-availability monitoring and control dashboard portfolio platform deployed on **AWS ECS Fargate** with a fully automated **AWS CodePipeline CI/CD** rolling deployment strategy, custom domain SSL via **AWS Certificate Manager (ACM)**, and secure externalized secrets management via **SSM Parameter Store**.",
+        "tech_stack": [
+            "AWS Fargate",
+            "Docker",
+            "Next.js",
+            "Django",
+            "PostgreSQL",
+            "Live",
+            "ALB Active with Listeners",
+            "SSM Parameter Store",
+            "ECR Private Repositories",
+            "ECS Fargate Cluster"
+        ],
+        "github_url": "https://github.com/MrSanketPrajapatissp/DevOps-Portfolio",
+        "live_url": "https://portfolio.sanketdevs.online",
+        "readme_content": "# Control Plane — Next-Gen AWS DevOps Portfolio Platform\n\n[![AWS Fargate](https://img.shields.io/badge/AWS-Fargate-orange?style=flat-square&logo=amazon-aws)](https://aws.amazon.com/)\n[![Docker](https://img.shields.io/badge/Docker-Containers-blue?style=flat-square&logo=docker)](https://www.docker.com/)\n[![Next.js](https://img.shields.io/badge/Next.js-Standalone-black?style=flat-square&logo=nextdotjs)](https://nextjs.org/)\n[![Django](https://img.shields.io/badge/Django-REST_Framework-green?style=flat-square&logo=django)](https://www.djangoproject.com/)\n[![PostgreSQL](https://img.shields.io/badge/RDS-PostgreSQL-blue?style=flat-square&logo=postgresql)](https://aws.amazon.com/rds/)\n[![Live](https://img.shields.io/badge/Live-portfolio.sanketdevs.online-cyan?style=flat-square&logo=google-chrome)](https://portfolio.sanketdevs.online)\n\n> An enterprise-grade, high-availability monitoring and control dashboard portfolio platform deployed on **AWS ECS Fargate** with a fully automated **AWS CodePipeline CI/CD** rolling deployment strategy, custom domain SSL via **AWS Certificate Manager (ACM)**, and secure externalized secrets management via **SSM Parameter Store**.\n\n---\n\n## 🏗️ System Architecture\n\n![System Architecture — AWS ECS Fargate with CI/CD Pipeline](./docs/screenshots/AWS_Architecture_Diagram_animated_2K_202607111534.jpeg)\n\n---\n\n## 🛠️ Technology Stack\n\n| Layer | Technology | Purpose |\n|-------|-----------|---------|\n| **Frontend** | Next.js 14 (Standalone) | Server-rendered React application with App Router |\n| **Backend** | Django REST Framework 4.2 | RESTful API server with JWT authentication |\n| **WSGI Server** | Gunicorn | Production-grade Python WSGI HTTP server |\n| **Database** | AWS RDS Aurora Serverless v2 (PostgreSQL) | Managed, scalable relational database |\n| **Static Storage** | Amazon S3 | Static files & media asset storage |\n| **Container Registry** | Amazon ECR | Private Docker image repository |\n| **Orchestration** | AWS ECS Fargate | Serverless container orchestration |\n| **Load Balancer** | AWS ALB | Path-based routing with HTTPS termination |\n| **SSL/TLS** | AWS Certificate Manager (ACM) | Managed SSL certificate for `portfolio.sanketdevs.online` |\n| **DNS** | BigRock (External Registrar) | Domain management with CNAME validation for ACM |\n| **Secrets** | AWS SSM Parameter Store | Encrypted credential injection at container boot |\n| **Logging** | AWS CloudWatch Logs | Centralized container log aggregation |\n| **CI/CD** | AWS CodePipeline + CodeBuild | Automated build, test, and deploy pipeline |\n\n---\n\n## ⚙️ Infrastructure Deep Dive\n\n### 1. Networking & VPC Architecture\nThe application runs inside a custom **AWS VPC (10.0.0.0/16)** spanning **2 Availability Zones** (`ap-south-1a` and `ap-south-1b`) for fault tolerance:\n- **2 Public Subnets**: Host the internet-facing Application Load Balancer.\n- **2 Private Subnets**: Host the ECS Fargate container tasks (no direct internet exposure).\n- **Isolated DB Subnets**: Host the RDS Aurora PostgreSQL instance, accessible only from the backend security group.\n\n### 2. Security Groups (Least-Privilege Firewall Rules)\n| Security Group | Ingress Rule | Source |\n|----------------|-------------|--------|\n| `ALB-SG` | Port 80 (HTTP), Port 443 (HTTPS) | `0.0.0.0/0` (Internet) |\n| `Frontend-SG` | Port 3000 | `ALB-SG` only |\n| `Backend-SG` | Port 8000 | `ALB-SG` only |\n| `DB-SG` | Port 5432 | `Backend-SG` only |\n\n### 3. SSL/TLS & Custom Domain\nThe domain **`portfolio.sanketdevs.online`** is registered on **BigRock** (external DNS registrar). SSL is managed using **AWS Certificate Manager (ACM)**:\n- An ACM public certificate was requested for `portfolio.sanketdevs.online`.\n- DNS validation was completed by adding the ACM-provided **CNAME records** in the BigRock DNS management panel.\n- The issued certificate is attached to the ALB **HTTPS:443** listener, enabling end-to-end encrypted traffic.\n\n#### 📸 ACM Certificate — Issued & Active\n![ACM Certificate Issued for portfolio.sanketdevs.online](./docs/screenshots/Screenshot%20(1150).png)\n\n### 4. Application Load Balancer (ALB) — Path-Based Routing\nThe ALB dynamically routes incoming requests based on URL paths:\n- **`/`** → Forwarded to `portfolio-tg-fe-blue-ip` (Next.js Frontend on Port 3000)\n- **`/api/*`** → Forwarded to `portfolio-tg-be-blue-ip` (Django Backend on Port 8000)\n- **HTTP:80** → Automatically redirects to **HTTPS:443** (HTTP 301)\n\n#### 📸 Application Load Balancer — Active with HTTPS Listener\n![ALB Active with Listeners](./docs/screenshots/Screenshot%20(1149).png)\n\n---\n\n## 🔒 Secrets Management\n\nAll sensitive environment variables are externalized from source code and securely stored in **AWS Systems Manager (SSM) Parameter Store**. ECS task definitions reference these parameters at container launch:\n\n| Parameter Path | Type | Purpose |\n|----------------|------|---------|\n| `/portfolio/DB_HOST` | String | RDS Aurora endpoint hostname |\n| `/portfolio/DB_NAME` | String | PostgreSQL database name |\n| `/portfolio/DB_USER` | String | Database username |\n| `/portfolio/DB_PASSWORD` | SecureString | Database password (KMS encrypted) |\n| `/portfolio/SECRET_KEY` | SecureString | Django cryptographic signing key |\n| `/portfolio/GITHUB_TOKEN` | SecureString | GitHub API token for repo sync |\n| `/portfolio/AWS_STORAGE_BUCKET_NAME` | String | S3 bucket name for assets |\n\n#### 📸 SSM Parameter Store — Encrypted Secrets\n![SSM Parameter Store](./docs/screenshots/Screenshot%20(1147).png)\n\n---\n\n## 🐳 Containerization & ECR\n\nBoth the frontend and backend are packaged as optimized, multi-stage Docker images:\n\n| Image | Base | Size Optimization | Port |\n|-------|------|-------------------|------|\n| `portfolio-frontend` | `node:20-alpine` | Next.js standalone output mode | 3000 |\n| `portfolio-backend` | `python:3.11-slim` | Multi-stage pip install + slim runtime | 8000 |\n\nImages are pushed to **Amazon Elastic Container Registry (ECR)** with both `latest` and git commit hash tags for versioning and rollback traceability.\n\n#### 📸 Amazon ECR — Private Repositories\n![ECR Private Repositories](./docs/screenshots/Screenshot%20(1148).png)\n\n---\n\n## 🚀 ECS Fargate Cluster — Serverless Containers\n\nThe application runs on **AWS ECS Fargate** (serverless compute), eliminating the need to manage EC2 instances:\n- **Cluster**: `portfolio-cluster` (Active)\n- **Services**: 2 Active (`portfolio-frontend-service`, `portfolio-backend-service`)\n- **Tasks**: 2 Running, 0 Pending\n- **Deployment Strategy**: ECS Rolling Update (Zero-Downtime)\n  - `minimumHealthyPercent: 100%` — Old tasks stay alive until new ones pass health checks.\n  - `maximumPercent: 200%` — New tasks are provisioned alongside old ones during deployment.\n\n#### 📸 ECS Cluster — 2 Active Services, 2 Running Tasks\n![ECS Fargate Cluster](./docs/screenshots/Screenshot%20(1146).png)\n\n---\n\n## 🔄 CI/CD Pipeline — Fully Automated Delivery\n\nThe entire build and deployment lifecycle is automated using a **3-stage AWS CodePipeline**:\n\n```\n┌──────────┐     ┌──────────┐     ┌──────────────────────────┐\n│  Source   │────▶│  Build   │────▶│        Deploy            │\n│  GitHub   │     │ CodeBuild│     │ ┌────────────────────┐   │\n│  (main)   │     │          │     │ │ DeployFrontend ✅  │   │\n│           │     │ Docker   │     │ │ (Amazon ECS)       │   │\n│  Webhook  │     │ Build +  │     │ ├────────────────────┤   │\n│  Trigger  │     │ ECR Push │     │ │ Deploy (Backend) ✅│   │\n│           │     │          │     │ │ (Amazon ECS)       │   │\n└──────────┘     └──────────┘     │ └────────────────────┘   │\n                                  └──────────────────────────┘\n```\n\n### Pipeline Stages:\n1. **Source**: GitHub webhook triggers pipeline on every push to `main` branch.\n2. **Build**: AWS CodeBuild authenticates to ECR, builds both Docker images, tags with commit hash, pushes to ECR, and outputs `imagedefinitions.json` artifacts.\n3. **Deploy**: Two parallel ECS deploy actions update the frontend and backend services using rolling update strategy.\n\n#### 📸 CodePipeline — All Stages Successful (100% Green)\n![CodePipeline All Green](./docs/screenshots/Screenshot%20(1152).png)\n\n#### 📸 CodePipeline — Deploy Stage In Progress\n![CodePipeline Deploy In Progress](./docs/screenshots/Screenshot%20(1151).png)\n\n---\n\n## 🌐 Live Application\n\nThe application is live at **[https://portfolio.sanketdevs.online](https://portfolio.sanketdevs.online)**\n\n### Public Dashboard (Terminal-Themed UI)\nA DevOps monitoring control dashboard with a terminal boot sequence, system modules panel, and real-time status indicators:\n\n#### 📸 Portfolio Dashboard — Live Production\n![Portfolio Live UI](./docs/screenshots/Screenshot%20(1137).png)\n\n### Admin Panel (Content Management System)\nA full-featured admin panel for managing portfolio content (projects, skills, certifications, experience, social links, resume, and contact messages):\n\n#### 📸 Admin Panel — System Overview\n![Admin Panel Dashboard](./docs/screenshots/Screenshot%20(1138).png)\n\n---\n\n## 💻 Local Development Setup\n\n### Prerequisites\n- Docker & Docker Compose\n- Node.js v20+\n- Python v3.11+\n\n### Quick Start\n```bash\n# Clone the repository\ngit clone https://github.com/MrSanketPrajapatissp/DevOps-Portfolio.git\ncd DevOps-Portfolio\n\n# Start backend\ncd backend\npython -m venv venv\nsource venv/bin/activate   # Windows: venv\\Scripts\\activate\npip install -r requirements.txt\npython manage.py migrate\npython manage.py runserver\n\n# Start frontend (new terminal)\ncd ../frontend\nnpm install\nnpm run dev\n```\n\nAccess the application at `http://localhost:3000`. Admin panel at `/admin-portal`.\n\n---\n\n## 📂 Repository Structure\n\n```\nDevOps-Portfolio/\n├── backend/                    # Django REST Framework API\n│   ├── Dockerfile              # Multi-stage Python 3.11-slim build\n│   ├── entrypoint.sh           # DB wait → migrate → collectstatic → gunicorn\n│   ├── gunicorn.conf.py        # Production WSGI server config\n│   ├── portfolio/settings.py   # Dynamic DB/S3/CORS configuration\n│   └── requirements.txt        # Python dependencies\n├── frontend/                   # Next.js 14 App Router\n│   ├── Dockerfile              # Multi-stage Node 20-alpine build\n│   ├── next.config.mjs         # Standalone output mode\n│   ├── app/                    # Pages and layouts\n│   ├── components/             # Reusable UI components\n│   └── lib/                    # API client & utilities\n├── buildspec.yml               # AWS CodeBuild specification\n├── taskdef-backend.json        # ECS Task Definition template (backend)\n├── taskdef-frontend.json       # ECS Task Definition template (frontend)\n├── appspec-backend.yaml        # CodeDeploy app spec (backend)\n├── appspec-frontend.yaml       # CodeDeploy app spec (frontend)\n└── docs/screenshots/           # AWS Console proof screenshots\n```\n\n---\n\n<p align=\"center\">\n  <b>Built with ❤️ by <a href=\"https://github.com/MrSanketPrajapatissp\">Sanket Prajapati</a></b><br>\n  <i>AWS DevOps Engineer | Cloud Infrastructure | CI/CD Automation</i>\n</p>\n",
+        "image": "projects/AWS_Architecture_Diagram_animated_2K_202607111534.jpeg",
+        "is_github_synced": true,
+        "github_repo_name": "MrSanketPrajapatissp/DevOps-Portfolio",
+        "last_synced": "2026-07-11T12:08:24.072Z",
+        "status": "deployed",
+        "order": 2,
+        "created_at": "2026-07-11T11:27:09.159Z",
+        "updated_at": "2026-07-11T12:08:24.072Z"
+    }
+},
+{
+    "model": "projects.project",
+    "pk": 25,
+    "fields": {
+        "title": "Karvion — FinTech & Tax Compliance Portal",
+        "slug": "karvion-fintech-tax-compliance-portal",
+        "description": "A production-grade secure tax compliance portal. Engineered secure credential storage with AES-256-GCM encryption, JWT sessions, and a serverless document upload stream straight to Google Drive API to ensure zero-local-storage client data compliance.",
+        "tech_stack": [
+            "Django 5.1",
+            "React 19",
+            "Docker",
+            "Render",
+            "Cloudflare Pages",
+            "AES-256-GCM",
+            "JWT",
+            "Google Drive API"
+        ],
+        "github_url": "https://github.com/MrSanketPrajapatissp/Karvion",
+        "live_url": "",
+        "readme_content": "# Karvion — FinTech & Tax Compliance Portal\n\n> **A Production-Grade, Secure, and Highly Compliant Financial & Tax Management Portal.**\n> \n> **Stack**: Django 5.1 (Gunicorn Backend) + React 19 & Vite (Frontend) + Render & Cloudflare Pages (Hosting) + Google Drive API (Serverless Uploads) + AES-256-GCM (Security) + JWT Authentication (Session Management)\n\n---\n\n## 🚀 Core Features & Security Implementations\n\n*   **Secure Document Management**: Implemented a serverless-style document upload flow using the **Google Drive API** to stream user files directly from requests. Achieved strict zero-local-storage data compliance with automated 15-day purge audit logging.\n*   **Cryptographic Security**: Engineered secure credential storage using **AES-256-GCM encryption** to protect sensitive user tax parameters and documents.\n*   **Robust Session Authentication**: Set up JWT session validation with token blacklisting to secure API endpoints, preventing unauthorized access.\n*   **Optimized Deployment & Delivery**: Deployed the Gunicorn backend on **Render (Docker)** and static frontend assets on **Cloudflare Pages** for global caching and high performance.\n",
+        "image": "",
+        "is_github_synced": false,
+        "github_repo_name": "MrSanketPrajapatissp/Karvion",
+        "last_synced": null,
+        "status": "deployed",
+        "order": 3,
+        "created_at": "2026-07-11T11:27:09.243Z",
+        "updated_at": "2026-07-11T11:27:09.244Z"
+    }
+},
+{
+    "model": "certifications.certification",
+    "pk": 20,
+    "fields": {
+        "name": "AWS Certified Machine Learning Engineer – Associate",
+        "issuer": "Amazon Web Services (AWS)",
+        "credential_id": "HC-TFA-003-AC",
+        "credential_url": "https://www.credly.com/badges/f1a45883-ea4a-4a6d-9d00-335665340a8c/public_url",
+        "badge_image": "certifications/aws-certified-machine-learning-engineer-associate.png",
+        "date_obtained": "2026-04-28",
+        "expiry_date": "2029-04-28",
+        "status": "obtained",
+        "order": 1
+    }
+},
+{
+    "model": "certifications.certification",
+    "pk": 21,
+    "fields": {
+        "name": "AWS Certified Data Engineer – Associate",
+        "issuer": "Amazon Web Services (AWS)",
+        "credential_id": "",
+        "credential_url": "https://www.credly.com/badges/09aaf95d-d017-41a4-9a3c-846b07b8f9e7/public_url",
+        "badge_image": "",
+        "date_obtained": "2026-03-29",
+        "expiry_date": "2029-03-29",
+        "status": "obtained",
+        "order": 2
+    }
+},
+{
+    "model": "certifications.certification",
+    "pk": 22,
+    "fields": {
+        "name": "AWS Certified Solutions Architect – Associate",
+        "issuer": "Amazon Web Services (AWS)",
+        "credential_id": "AWS-SAA-2026-AC",
+        "credential_url": "https://www.credly.com/badges/d3ff44a3-1e6d-47f6-b02b-feb0054b3755/public_url",
+        "badge_image": "certifications/aws-certified-solutions-architect-associate.png",
+        "date_obtained": "2026-02-20",
+        "expiry_date": "2029-02-20",
+        "status": "obtained",
+        "order": 3
+    }
+},
+{
+    "model": "certifications.certification",
+    "pk": 23,
+    "fields": {
+        "name": "AWS Certified Cloud Practitioner",
+        "issuer": "Amazon Web Services (AWS)",
+        "credential_id": "",
+        "credential_url": "https://www.credly.com/badges/d3ff44a3-1e6d-47f6-b02b-feb0054b3755/public_url",
+        "badge_image": "",
+        "date_obtained": "2026-02-15",
+        "expiry_date": "2029-04-15",
+        "status": "obtained",
+        "order": 4
+    }
+},
+{
+    "model": "certifications.certification",
+    "pk": 24,
+    "fields": {
+        "name": "Python Full Stack Development Certificate",
+        "issuer": "Kiran Academy",
+        "credential_id": "",
+        "credential_url": "",
+        "badge_image": "",
+        "date_obtained": "2026-04-01",
+        "expiry_date": null,
+        "status": "obtained",
+        "order": 5
+    }
+},
+{
+    "model": "experience.experience",
+    "pk": 14,
+    "fields": {
+        "role": "Trainee Developer | Python Full Stack & DevOps Engineer",
+        "company": "Kiran Academy",
+        "company_url": "https://www.kiranacademy.com",
+        "start_date": "2025-11-01",
+        "end_date": "2026-04-30",
+        "is_current": false,
+        "description": "Designed and built production-ready Python/Django full-stack applications coupled with secure, automated, and highly available AWS cloud architectures.",
+        "achievements": [
+            "Architected and provisioned an AWS 3-Tier Production Architecture (VPC CIDR '192.168.0.0/16') spanning 2 Availability Zones, enforcing isolation via 2 public and 4 private subnets.",
+            "Deployed Nginx/React frontends and Django/Gunicorn backend task nodes on EC2 instances behind dual-tier Application Load Balancers (ALB) and Auto Scaling Groups (ASG) to dynamically absorb sudden traffic spikes.",
+            "Automated Docker builds and seamless continuous deployment flows by engineering a GitHub Actions CI/CD pipeline integrated with AWS Systems Manager (SSM) Agent, eliminating SSH exposures.",
+            "Configured a Multi-AZ Amazon RDS PostgreSQL database in isolated subnets with strict security group parameters (ingress restricted to App-SG on port 5432) and externalized configurations to SSM Parameter Store."
+        ],
+        "technologies": [
+            "AWS",
+            "Terraform",
+            "Docker",
+            "GitHub Actions",
+            "Amazon ECR",
+            "AWS SSM",
+            "PostgreSQL",
+            "Nginx",
+            "Django",
+            "React"
+        ],
+        "order": 1
+    }
+},
+{
+    "model": "experience.experience",
+    "pk": 15,
+    "fields": {
+        "role": "Web Development Intern | PrimaDelhiPoint Developer",
+        "company": "Primathink Technologies Pvt. Ltd.",
+        "company_url": "https://www.primathink.com",
+        "start_date": "2022-05-01",
+        "end_date": "2022-07-31",
+        "is_current": false,
+        "description": "Developed interactive and highly responsive web pages and implemented optimized search/navigation interfaces using Agile methodologies.",
+        "achievements": [
+            "Developed and launched PrimaDelhiPoint, a responsive tourist information portal utilizing HTML5, CSS3, and vanilla JavaScript to provide an optimized mobile layout.",
+            "Engineered client-side search filtering and dynamic UI interactive components using optimized JavaScript DOM manipulation, reducing page load latency.",
+            "Collaborated closely with senior developers in an Agile framework, managing code versions and project sprints via Git and GitHub."
+        ],
+        "technologies": [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "DOM Manipulation",
+            "GitHub",
+            "Git",
+            "Agile"
+        ],
+        "order": 2
+    }
+},
+{
+    "model": "showcases.showcase",
+    "pk": 13,
+    "fields": {
+        "title": "FoodBridge 3-Tier AWS Architecture",
+        "slug": "foodbridge-3-tier-aws",
+        "description": "Designed and deployed a highly available, secure, and automated 3-tier AWS architecture for the FoodBridge platform.",
+        "diagram_image": "projects/AWS_cloud_architecture_diagram__p0qCwx4.jpeg",
+        "technologies": [
+            "AWS VPC",
+            "EC2",
+            "ALB",
+            "ASG",
+            "RDS PostgreSQL",
+            "NAT Gateway",
+            "Route 53",
+            "ACM",
+            "GitHub Actions"
+        ],
+        "challenge": "Deploying a full-stack Django and React application with high availability, isolated subnet security, auto-scaling, and secure deployment pipelines without exposing credentials.",
+        "solution": "Implemented a custom VPC with 2 public subnets for external ALBs and frontend, 2 private app subnets for backend, and 2 private DB subnets for RDS. Configured outbound-only NAT Gateway routing. Set up Autoscaling Groups and Load Balancers. Built a GitOps pipeline using GitHub Actions and AWS Systems Manager (SSM) Agent to pull and deploy container images from ECR.",
+        "impact": "Achieved zero single point of failure, isolated private app tier from direct internet, enabled automated container builds and zero-downtime SSM deployments, and secured database with restricted Security Group access.",
+        "order": 1,
+        "created_at": "2026-07-11T11:27:09.413Z"
+    }
+},
+{
+    "model": "showcases.showcase",
+    "pk": 14,
+    "fields": {
+        "title": "Control Plane — AWS ECS Fargate Architecture",
+        "slug": "control-plane-ecs-fargate",
+        "description": "An enterprise-grade, high-availability containerized platform hosting the portfolio using ECS Fargate, ALB, and RDS Aurora PostgreSQL, automated via AWS CodePipeline.",
+        "diagram_image": "projects/AWS_Architecture_Diagram_animated_2K_202607111534.jpeg",
+        "technologies": [
+            "AWS ECS Fargate",
+            "AWS CodePipeline",
+            "CodeBuild",
+            "AWS RDS Aurora",
+            "Amazon S3",
+            "SSM Parameter Store",
+            "Route 53",
+            "ACM",
+            "Docker"
+        ],
+        "challenge": "Setting up a secure, zero-downtime rolling update deployment for a containerized full-stack application on AWS, ensuring database credentials and secret variables are managed securely.",
+        "solution": "Configured a custom VPC with public, private, and isolated DB subnets. Packaged the app into optimized Docker containers and pushed to ECR. Deployed tasks onto serverless AWS ECS Fargate with path-based routing via ALB. Managed secrets in AWS SSM Parameter Store. Set up a 3-stage AWS CodePipeline triggered by GitHub webhooks to automate docker builds (CodeBuild) and roll out updates (ECS rolling deployment with 100-200% tasks).",
+        "impact": "Achieved 100% automated GitOps CD pipeline, zero-downtime rolling updates, securely isolated backend from public networks, and centralized logging via CloudWatch.",
+        "order": 2,
+        "created_at": "2026-07-11T11:27:09.498Z"
+    }
+},
+{
+    "model": "showcases.showcase",
+    "pk": 15,
+    "fields": {
+        "title": "Karvion FinTech & Tax Compliance Architecture",
+        "slug": "karvion-fintech-architecture",
+        "description": "Designed a secure cloud-native architecture for a FinTech and Tax compliance portal using Gunicorn/Django on Render and Cloudflare Pages.",
+        "diagram_image": "",
+        "technologies": [
+            "Django 5.1",
+            "React 19",
+            "Docker",
+            "Render",
+            "Cloudflare Pages",
+            "AES-256-GCM",
+            "JWT",
+            "Google Drive API"
+        ],
+        "challenge": "Securing sensitive financial documents and user credentials, ensuring zero local storage of tax documents, and establishing robust session authentication.",
+        "solution": "Developed a streaming file upload system to Google Drive API directly from request stream to achieve zero local storage compliance. Encrypted user credentials using AES-256-GCM. Implemented secure JWT session authentication with token blacklisting.",
+        "impact": "Achieved strict compliance with financial data storage policies, reduced local storage footprint to zero, secured endpoints with robust token authentication, and optimized static asset delivery via Cloudflare CDN.",
+        "order": 3,
+        "created_at": "2026-07-11T11:27:09.572Z"
+    }
+}
+]
