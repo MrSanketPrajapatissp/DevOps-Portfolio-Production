@@ -800,16 +800,23 @@ export default function HomePage() {
 
     const interval = setInterval(fetchAll, 10000);
 
-    const channel = new BroadcastChannel('portfolio_sync');
-    channel.onmessage = (e) => {
-      if (e.data === 'sync_data') {
-        fetchAll();
-      }
-    };
+    let channel;
+    try {
+      channel = new BroadcastChannel('portfolio_sync');
+      channel.onmessage = (e) => {
+        if (e.data === 'sync_data') {
+          fetchAll();
+        }
+      };
+    } catch (err) {
+      console.warn('BroadcastChannel is not supported in this browser context:', err);
+    }
 
     return () => {
       clearInterval(interval);
-      channel.close();
+      if (channel) {
+        channel.close();
+      }
     };
   }, []);
 
