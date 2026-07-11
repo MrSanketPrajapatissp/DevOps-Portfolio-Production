@@ -781,18 +781,34 @@ export default function HomePage() {
     document.documentElement.setAttribute('data-theme', nextTheme);
   };
 
+  // Load cached data from localStorage immediately on mount to prevent loader screen for returning visitors
+  useEffect(() => {
+    const cached = localStorage.getItem('portfolio_cache');
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        setData(parsed);
+        setLoading(false);
+      } catch (e) {
+        console.error('Error loading portfolio cache:', e);
+      }
+    }
+  }, []);
+
   useEffect(() => {
     async function fetchAll() {
       try {
         const endpoints = ['hero', 'summary', 'skill-categories', 'projects', 'certifications', 'experience', 'showcases', 'social-links', 'resume'];
         const responses = await Promise.all(endpoints.map(e => fetch(`${API}/api/${e}/`).then(r => r.ok ? r.json() : null).catch(() => null)));
-        setData({
+        const freshData = {
           hero: responses[0], summary: responses[1],
           categories: responses[2], projects: responses[3],
           certifications: responses[4], experience: responses[5],
           showcases: responses[6], socialLinks: responses[7],
           resume: responses[8],
-        });
+        };
+        setData(freshData);
+        localStorage.setItem('portfolio_cache', JSON.stringify(freshData));
       } catch (err) { console.error('Fetch error:', err); }
       setLoading(false);
     }
