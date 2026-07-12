@@ -798,17 +798,12 @@ export default function HomePage() {
   useEffect(() => {
     async function fetchAll() {
       try {
-        const endpoints = ['hero', 'summary', 'skill-categories', 'projects', 'certifications', 'experience', 'showcases', 'social-links', 'resume'];
-        const responses = await Promise.all(endpoints.map(e => fetch(`${API}/api/${e}/`).then(r => r.ok ? r.json() : null).catch(() => null)));
-        const freshData = {
-          hero: responses[0], summary: responses[1],
-          categories: responses[2], projects: responses[3],
-          certifications: responses[4], experience: responses[5],
-          showcases: responses[6], socialLinks: responses[7],
-          resume: responses[8],
-        };
-        setData(freshData);
-        localStorage.setItem('portfolio_cache', JSON.stringify(freshData));
+        const res = await fetch(`${API}/api/portfolio-data/`);
+        if (res.ok) {
+          const freshData = await res.json();
+          setData(freshData);
+          localStorage.setItem('portfolio_cache', JSON.stringify(freshData));
+        }
       } catch (err) { console.error('Fetch error:', err); }
       setLoading(false);
     }

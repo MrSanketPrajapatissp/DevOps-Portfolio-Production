@@ -101,6 +101,7 @@ if DB_HOST:
             'PASSWORD': os.environ.get('DB_PASSWORD'),
             'HOST': DB_HOST,
             'PORT': os.environ.get('DB_PORT', '5432'),
+            'CONN_MAX_AGE': 600,
             'OPTIONS': {
                 'sslmode': os.environ.get('DB_SSLMODE', 'require'),
             }

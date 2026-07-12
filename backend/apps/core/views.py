@@ -204,3 +204,44 @@ class AdminMessageDeleteView(generics.DestroyAPIView):
     queryset = ContactMessage.objects.all()
     serializer_class = ContactMessageSerializer
     permission_classes = [IsAuthenticated]
+
+
+class UnifiedPortfolioView(APIView):
+    """Return all public portfolio data in a single request to minimize latency."""
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        from apps.skills.models import SkillCategory
+        from apps.skills.serializers import SkillCategorySerializer
+        from apps.projects.models import Project
+        from apps.projects.serializers import ProjectListSerializer
+        from apps.certifications.models import Certification
+        from apps.certifications.serializers import CertificationSerializer
+        from apps.experience.models import Experience
+        from apps.experience.serializers import ExperienceSerializer
+        from apps.showcases.models import Showcase
+        from apps.showcases.serializers import ShowcaseSerializer
+
+        hero = HeroIdentity.objects.first()
+        summary = ProfessionalSummary.objects.first()
+        social_links = SocialLink.objects.all()
+        resume = Resume.objects.filter(is_active=True).first()
+        
+        # Prefetch child skills to avoid N+1 queries
+        skills = SkillCategory.objects.prefetch_related('skills').all()
+        projects = Project.objects.all()
+        certifications = Certification.objects.all()
+        experience = Experience.objects.all()
+        showcases = Showcase.objects.all()
+
+        return Response({
+            'hero': HeroIdentitySerializer(hero).data if hero else None,
+            'summary': ProfessionalSummarySerializer(summary).data if summary else None,
+            'socialLinks': SocialLinkSerializer(social_links, many=True).data,
+            'resume': ResumeSerializer(resume).data if resume else None,
+            'categories': SkillCategorySerializer(skills, many=True).data,
+            'projects': ProjectListSerializer(projects, many=True).data,
+            'certifications': CertificationSerializer(certifications, many=True).data,
+            'experience': ExperienceSerializer(experience, many=True).data,
+            'showcases': ShowcaseSerializer(showcases, many=True).data,
+        })

@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     # Public
+    path('portfolio-data/', views.UnifiedPortfolioView.as_view(), name='portfolio-data'),
     path('hero/', views.HeroView.as_view(), name='hero'),
     path('summary/', views.SummaryView.as_view(), name='summary'),
     path('social-links/', views.SocialLinkListView.as_view(), name='social-links'),
